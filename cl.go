@@ -22,7 +22,7 @@ package cl
 // #include "cl.h"
 // #endif
 // #cgo darwin LDFLAGS: -framework OpenCL
-// #cgo linux LDFLAGS: -IOpenCL
+// #cgo linux LDFLAGS: -L/usr/include/CL -IOpenCL
 import "C"
 import "errors"
 
