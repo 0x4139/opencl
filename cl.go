@@ -15,14 +15,9 @@ to avoid leaks. This is similar to how file handles and such are handled
 in the Go standard packages.
 */
 package cl
-
-// #ifdef __APPLE__
-// #include "OpenCL/opencl.h"
-// #else
-// #include "cl.h"
-// #endif
+// #cgo linux pkg-config: OpenCL
 // #cgo darwin LDFLAGS: -framework OpenCL
-// #cgo linux LDFLAGS: -L/usr/include/CL -IOpenCL
+// #cgo windows LDFLAGS: -lOpenCL
 import "C"
 import "errors"
 
